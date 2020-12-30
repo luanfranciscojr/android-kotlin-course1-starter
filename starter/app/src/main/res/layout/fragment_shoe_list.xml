@@ -6,20 +6,19 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".screens.shoes.list.ShoeListFragment">
+    <!-- I used constraint layout to position Floating button in bottom end layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <!-- Linear layout with elements in vertical position like a ListView-->/
-    <LinearLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-         >
+        <!-- Linear layout with elements in vertical position like a ListView-->/
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
-
-    </LinearLayout>
+        </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/detail_button"
@@ -30,7 +29,6 @@
             android:clickable="true"
             android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
