@@ -23,49 +23,20 @@ class ShoeViewModel : ViewModel(), Observable {
     val shoes: LiveData<ArrayList<Shoe>>
         get() = _shoes
 
-    @Bindable
-    var name = String()
-        set(value) {
-            if (value != field) {
-                field = value
-                propertyChangeRegistry.notifyChange(this, BR.name)
-            }
-        }
+    val name = MutableLiveData<String>()
 
-    @Bindable
-    var size = 0.0
-        set(value) {
-            if (value != field) {
-                field = value
-                propertyChangeRegistry.notifyChange(this, BR.size)
-            }
-        }
+    var size =  MutableLiveData(0.0)
 
-    @Bindable
-    var company = String()
-        set(value) {
-            if (value != field) {
-                field = value
-                propertyChangeRegistry.notifyChange(this, BR.company)
-            }
-        }
+    var company =  MutableLiveData<String>()
 
-    @Bindable
-    var description = String()
-        set(value) {
-            if (value != field) {
-                field = value
-                propertyChangeRegistry.notifyChange(this, BR.description)
-            }
-        }
-
+    var description = MutableLiveData<String>()
 
     private fun _addShoe(shoe: Shoe) {
         _shoes.value?.add(shoe);
     }
 
     fun save() {
-        _addShoe(Shoe(name, size, company, description))
+        _addShoe(Shoe(name.value, size.value, company.value, description.value))
         _backEvent.value = true;
     }
 

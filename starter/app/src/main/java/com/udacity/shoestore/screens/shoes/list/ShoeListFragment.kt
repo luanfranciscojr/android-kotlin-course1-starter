@@ -5,6 +5,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.children
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -17,14 +18,13 @@ import com.udacity.shoestore.screens.shoes.list.ShoeItemView
 class ShoeListFragment : Fragment() {
 
 
-    private lateinit var viewModel: ShoeViewModel
+    private val viewModel by activityViewModels<ShoeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentShoeListBinding.inflate(inflater)
-        viewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false);
         viewModel.intSaveEvent()
         viewModel.shoes.observe(viewLifecycleOwner, Observer {
