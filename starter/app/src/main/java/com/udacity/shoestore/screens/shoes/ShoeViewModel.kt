@@ -44,7 +44,7 @@ class ShoeViewModel : ViewModel(), Observable {
         _backEvent.value = true;
     }
 
-    fun intSaveEvent() {
+    fun onBackComplete() {
        _backEvent.value = false;
     }
 

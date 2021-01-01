@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Layout just have elements in vertical orientation so I used linear layout-->
+<?xml version="1.0" encoding="utf-8"?><!-- Layout just have elements in vertical orientation so I used linear layout-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".screens.welcome.WelcomeFragment">
 
@@ -40,8 +39,8 @@
         android:id="@+id/bt_instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bt_instruction"
         android:layout_marginTop="40dp"
+        android:text="@string/bt_instruction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_welcom_text" />

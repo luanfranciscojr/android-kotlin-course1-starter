@@ -26,7 +26,6 @@ class ShoeListFragment : Fragment() {
     ): View {
         val binding = FragmentShoeListBinding.inflate(inflater)
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false);
-        viewModel.intSaveEvent()
         viewModel.shoes.observe(viewLifecycleOwner, Observer {
             if (it.isNotEmpty()) {
                 it.forEach { shoe ->

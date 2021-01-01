@@ -1,25 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Layout just have elements in vertical orientation so I used linear layout-->
+<?xml version="1.0" encoding="utf-8"?><!-- Layout just have elements in vertical orientation so I used linear layout-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".screens.instruction.InstructionFragment">
 
 
     <TextView
         android:id="@+id/tv_instruction"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_height="wrap_content"
         android:text="@string/instruction"
-        android:textSize="@dimen/welcome_height"
-      />
+        android:textSize="@dimen/welcome_height" />
 
     <TextView
         android:id="@+id/tv_instruction_text"
@@ -33,7 +31,7 @@
     <Button
         android:id="@+id/bt_shoes"
         android:layout_width="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="@string/bt_shoes_title" />
 </LinearLayout>

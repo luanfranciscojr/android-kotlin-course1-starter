@@ -25,9 +25,10 @@ class ShoeDetailFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentShoeDetailBinding.inflate(inflater)
         binding.viewModel = viewModel
-        viewModel.backEvent.observe(viewLifecycleOwner, Observer { isSaved ->
-            if (isSaved) {
+        viewModel.backEvent.observe(viewLifecycleOwner, Observer { isBackEvent ->
+            if (isBackEvent) {
                 goToList();
+                viewModel.onBackComplete();
             }
         });
         return binding.root
