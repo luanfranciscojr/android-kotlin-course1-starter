@@ -31,7 +31,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@={viewModel.name}"
+            android:text="@={viewModel.shoe.name}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -62,7 +62,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="number"
-            android:text="@={`` +viewModel.size}"
+            android:text="@={`` +viewModel.shoe.size}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/label_size" />
 
@@ -82,7 +82,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@={viewModel.company}"
+            android:text="@={viewModel.shoe.company}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/label_company" />
 
@@ -102,7 +102,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@={viewModel.description}"
+            android:text="@={viewModel.shoe.description}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/label_description" />
 

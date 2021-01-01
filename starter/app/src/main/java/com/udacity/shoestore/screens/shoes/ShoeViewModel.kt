@@ -9,34 +9,25 @@ import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.BR
 import com.udacity.shoestore.models.Shoe
 
-class ShoeViewModel : ViewModel(), Observable {
-
-
-    private val propertyChangeRegistry = PropertyChangeRegistry()
+class ShoeViewModel : ViewModel() {
 
     private val _shoes = MutableLiveData<ArrayList<Shoe>>(ArrayList())
-
     private val _backEvent = MutableLiveData<Boolean>()
+
     val backEvent: LiveData<Boolean>
         get() = _backEvent
 
     val shoes: LiveData<ArrayList<Shoe>>
         get() = _shoes
 
-    val name = MutableLiveData<String>()
-
-    var size =  MutableLiveData(0.0)
-
-    var company =  MutableLiveData<String>()
-
-    var description = MutableLiveData<String>()
+    val shoe = Shoe("",0.0,"","")
 
     private fun _addShoe(shoe: Shoe) {
         _shoes.value?.add(shoe);
     }
 
     fun save() {
-        _addShoe(Shoe(name.value, size.value, company.value, description.value))
+        _addShoe(shoe)
         _backEvent.value = true;
     }
 
@@ -48,11 +39,4 @@ class ShoeViewModel : ViewModel(), Observable {
        _backEvent.value = false;
     }
 
-    override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
-        propertyChangeRegistry.add(callback)
-    }
-
-    override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
-        propertyChangeRegistry.remove(callback)
-    }
 }
